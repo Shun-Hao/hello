@@ -38,3 +38,36 @@ pub fn vector_test() {
     println!("row: {:?}", row);
 
 }
+
+pub fn string_test() {
+    //let str1 = "fdsa".to_string();
+    let mut str1 = String::from("fdsa");
+    str1.push_str(" jkl;");
+    str1 += " aaa";
+
+    let mut str2 = String::from(" str2");
+    str1 += &str2;
+    str2 += " bbb";
+
+    println!("str1: {}", str1);
+    println!("str2: {}", str2);
+
+    // format
+    let format_str = format!("{} --{}", str1, str2);
+    println!("format str: {}", format_str);
+
+
+    // indexing/slicing...
+    let str3 = String::from("学习");
+    println!("str3 len:{}", str3.len());
+    //println!("slice string: {}", &str3[0]); // String indexing not permitted
+    //println!("slice string: {}", &str3[0..3]); // String slicing not always good
+
+    // iterating
+    for c in str3.chars() {
+        println!("{}", c);
+    }
+    for c in str3.bytes() {
+        println!("{}", c);
+    }
+}

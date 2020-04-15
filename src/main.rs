@@ -15,8 +15,7 @@ fn main() {
 
     collection::log_collection();
     collection::vector_test();
-
-
+    collection::string_test();
 
 
 
