@@ -71,3 +71,49 @@ pub fn string_test() {
         println!("{}", c);
     }
 }
+
+
+use std::collections::HashMap;
+pub fn hashmap_test() {
+    let ks1 = String::from("k1");
+    let ks2 = String::from("k2");
+    let ks3 = String::from("k3");
+    let mut htbl = HashMap::new();
+    
+    
+
+    //all of the keys must have the same type, and all of the values must have the same type.
+    htbl.insert(ks1, 11);
+    htbl.insert(ks2, 12);
+    // println!("ks1: {}", ks1); // Error. ks1/ks2 have been moved to hashmap, cannot be used
+
+    let val = htbl.get("k2");
+    if let Some(_) = val {
+        println!("value: {}", val.unwrap());
+    }
+
+    htbl.entry(ks3).or_insert(13);
+    println!("htbl: {:?}", htbl);
+
+
+
+    let tmps1 = String::from("tmpk1");
+    let mut tmph = HashMap::new();
+    tmph.insert(&tmps1, 0);
+    // {
+    //     let tmps2 = String::from("tmpk2");
+    //     tmph.insert(&tmps2, 1); // Error: borrowed value does not live long enough
+    // }
+    println!("tmph: {:?}", tmph);
+
+
+
+
+    // let kv = vec!["t1", "t2"];
+    // let vv = vec![33,44];
+
+    // let htbl1 :HashMap<_, _> = kv.iter().zip(vv.iter()).collect();
+    // for (key, val) in &htbl1 {
+    //     println!("key:{}, val:{}", key, val);
+    // }
+}
