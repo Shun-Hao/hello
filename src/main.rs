@@ -4,6 +4,7 @@
 mod hello; // module hello defined in hello.rs
 mod mylib; // module mylib defined in mylib.rs
 mod collection;
+mod error;
 
 fn main() {
     hello::log_hello();
@@ -18,7 +19,8 @@ fn main() {
     collection::string_test();
     collection::hashmap_test();
 
-
+    error::log_error();
+    error::error_handler();
 
 
     return;
