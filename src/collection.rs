@@ -13,8 +13,9 @@ enum SpreadsheetCell {
 pub fn vector_test() {
     // Vectors can only store values of the same type
     //let v: Vec<i32> = Vec::new();
-    let mut v = vec![1, 2, 3]; // v is type of Vec<i32>
+    let mut v = vec![100, 30, 20]; // v is type of Vec<i32>
     v.push(123);
+    v.sort();
     println!("vec: {:?}", v[2]);
 
 
@@ -46,6 +47,7 @@ pub fn string_test() {
     str1 += " aaa";
 
     let mut str2 = String::from(" str2");
+    str1.push_str(&str2);
     str1 += &str2;
     str2 += " bbb";
 
@@ -113,7 +115,7 @@ pub fn hashmap_test() {
     // let vv = vec![33,44];
 
     // let htbl1 :HashMap<_, _> = kv.iter().zip(vv.iter()).collect();
-    // for (key, val) in &htbl1 {
-    //     println!("key:{}, val:{}", key, val);
-    // }
+    for (key, val) in &htbl {
+        println!("key:{}, val:{}", key, val);
+    }
 }
