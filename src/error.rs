@@ -21,6 +21,9 @@ pub fn propagate_error() -> Result<String, io::Error> {
 pub fn error_handler() {
     let f = propagate_error();
 
+    // let f = File::open("hello.txt").expect("Failed to open hello.txt");
+    // let ff = File::open("hello.txt").unwrap();
+
     match f {
         Ok(ok_str) => println!("file {} exists", ok_str),
         Err(error) => match error.kind() {

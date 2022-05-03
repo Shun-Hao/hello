@@ -5,6 +5,7 @@ mod hello; // module hello defined in hello.rs
 mod mylib; // module mylib defined in mylib.rs
 mod collection;
 mod error;
+mod generic;
 
 fn main() {
     hello::log_hello();
@@ -22,6 +23,9 @@ fn main() {
     error::log_error();
     error::error_handler();
 
+    generic::log_generic();
+    generic::test_trait();
+    generic::test_generic();
 
     return;
 }
